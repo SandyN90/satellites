@@ -20,7 +20,7 @@ const emits = defineEmits(['searchQueryResult']);
 
 const query = ref('')
 
-const searchQueryResult = (e: string) => {
-  if (e === "Enter" || e === "search") emits("searchQueryResult", query);
+const searchQueryResult = (key: string) => {
+  if (key === "Enter" || key === "search") emits("searchQueryResult", query.value);
 }
 </script>

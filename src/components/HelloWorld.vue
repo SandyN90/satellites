@@ -7,11 +7,14 @@
 
 <script setup lang="ts">
 import SearchBar from './SearchBar.vue';
+import satelliteJSON from "../assets/satellites.json"
+import { onMounted } from 'vue';
 
-defineProps<{ msg: string }>()
+
+
+onMounted(()=> {
+  const jsonData = Object.values(satelliteJSON);
+  console.log(jsonData);
+})
+
 </script>
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
-</style>

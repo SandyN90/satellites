@@ -32,7 +32,7 @@
         </div>
         <div class="flex items-center">
           <p v-show="currentPageNo - 1 > 0" class="text-base hover:cursor-pointer hover:bg-gray-200 px-3 py-1"
-            @click="goToPage(currentPageNo - 1)">{{ 
+            @click="goToPage(currentPageNo - 1)">{{
               currentPageNo - 1 }}
           </p>
           <p class="border border-gray-200 text-lg px-4">{{ currentPageNo }}</p>
@@ -78,8 +78,9 @@ const currentSearchedItems = ref<SatelliteData[]>([]);
 const itemsToDisplay = ref<SatelliteData[]>([]);
 const currentPageNo = ref(1);
 
-const isLeftArrowShow = computed(() => currentPageNo.value > 1 && currentPageNo.value < currentSearchedItems.value.length);
-const isRightArrowShow = computed(() => currentPageNo.value < currentSearchedItems.value.length);
+const isLeftArrowShow = computed(() => currentPageNo.value > 1 && currentPageNo.value < currentSearchedItems.value.length / 10);
+const isRightArrowShow = computed(() => currentPageNo.value + 1 < currentSearchedItems.value.length / 10);
+
 watch(() => props.searchResults, (results) => {
   currentSearchedItems.value = results;
   itemsToDisplay.value = results.slice(0, 10);

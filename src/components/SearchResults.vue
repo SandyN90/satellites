@@ -16,13 +16,6 @@
                 <p>{{ item.objectType }}</p>
               </div>
             </td>
-            <td class="p-3 px-2 md:px-4 text-sm text-gray-600">
-              <div class="flex items-center">
-                <p class="flex gap-x-1">
-                  <span class="hidden xl:block truncate">{{ (`lastUpdated`) }}</span>
-                </p>
-              </div>
-            </td>
           </tr>
         </tbody>
       </table>
